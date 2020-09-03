@@ -2,6 +2,6 @@ import React from "react";
 
 export default () => {
   return (
-    <div>Bar</div>
+    <div>User</div>
   );
 }

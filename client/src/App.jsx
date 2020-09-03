@@ -12,11 +12,11 @@ export default () => {
         <BrowserRouter>
           <nav>
             <Link to="/">Foo</Link>
-            <Link to="/bar">Bar</Link>
+            <Link to="/user">User</Link>
           </nav>
           <Switch>
             <Route path="/"    exact component={pages.Foo}/>
-            <Route path="/bar" exact component={pages.Bar}/>
+            <Route path="/user" exact component={pages.User}/>
           </Switch>
         </BrowserRouter>
       </Provider>
