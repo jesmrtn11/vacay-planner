@@ -1,15 +1,15 @@
-import { SET_USER } from '../types/';
+import { SET_USERS } from '../types';
 
 const initialState = {
-    user: ""
+    users: []
 }
 
 export default (state = initialState, action)  => {
     switch (action.type) {
-        case SET_USER:
+        case SET_USERS:
             return {
                 ...state,
-                user: action.user
+                users: action.users
             };
         default: 
             return state

@@ -1,2 +1,1 @@
-export { default as Foo } from "./Foo";
-export { default as User } from "./User";
+export { default as StartPage } from "./StartPage";
