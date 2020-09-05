@@ -1,0 +1,42 @@
+.calendar-table {
+  $root: &;
+
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+  border: 1px solid #e9ecef;
+
+  &__thead {
+    text-align: left;
+
+    th {
+      color: #fff;
+      background-color: #1d96b2;
+      border-right: 1px solid #e9ecef;
+      padding: 10px;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  &__tbody {
+    td{
+      border: 1px solid #e9ecef;
+      padding: 10px;
+    }
+
+    tr:nth-of-type(odd) {
+      background-color: #f2f2f2;
+    }
+  }
+
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
+}

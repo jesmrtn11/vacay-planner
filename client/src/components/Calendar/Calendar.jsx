@@ -25,9 +25,9 @@ const Calendar = ({ users }) => {
   {/* <pre>{json}</pre> */}
 
   <form>
-    <table className="calendar--table">
+    <table className="calendar-table">
 
-      <thead className="calendar--table-thead">
+      <thead className="calendar-table__thead">
         <tr>
           {headers.map((header,index)=>(
             <th key={index}>{header.toUpperCase()}</th>
@@ -35,7 +35,7 @@ const Calendar = ({ users }) => {
         </tr>
       </thead>
 
-      <tbody className="calendar--table-tbody">
+      <tbody className="calendar-table__tbody">
         {users.map((user, index)=>(
           <tr key={index}>
           {headers.map((header,index) => (
