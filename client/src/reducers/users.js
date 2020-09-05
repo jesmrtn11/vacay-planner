@@ -2,7 +2,7 @@ import { SET_USERS } from '../types';
 
 const initialState = {
     users: []
-}
+};
 
 export default (state = initialState, action)  => {
     switch (action.type) {

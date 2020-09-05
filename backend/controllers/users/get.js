@@ -6,74 +6,94 @@ router.use("/users", (req, res, next) => {
   res.json({
     users: [
       {
-        "id": 1,
-        "name": "Leanne Graham",
-        "username": "Bret",
-        "email": "Sincere@cybercom.com",
-        "phone": "736-8031-6442"
+        id: 1,
+        name: "Laura Graham",
+        username: "Bret",
+        email: "Sincere@test.com",
+        role: "Project manager",
+        startDate: "2020-06-10",
+        endDate: "2020-07-03"
       },
       {
-        "id": 2,
-        "name": "Ervin Howell",
-        "username": "Antonette",
-        "email": "Shanna@melissa.tv",
-        "phone": "692-6593-09125"
+        id: 2,
+        name: "Ervin Howell",
+        username: "Antonette",
+        email: "Shanna@melissa.tv",
+        role: "Frontend developer",
+        startDate: "2020-06-15",
+        endDate: "2020-07-10"
       },
       {
-        "id": 3,
-        "name": "Clementine Bauch",
-        "username": "Samantha",
-        "email": "Nathan@cybercom.com",
-        "phone": "1-463-123-4447"
+        id: 3,
+        name: "Clementine Bauch",
+        username: "Samantha",
+        email: "Nathan@test.com",
+        role: "Frontend developer",
+        startDate: "2020-06-10",
+        endDate: "2020-07-03"
       },
       {
-        "id": 4,
-        "name": "Patricia Lebsack",
-        "username": "Karianne",
-        "email": "Julianne.OConner@cybercom.com",
-        "phone": "490-9623-2156"
+        id: 4,
+        name: "Patricia Lebsack",
+        username: "Karianne",
+        email: "Julianne.OConner@test.com",
+        role: "Backend developer",
+        startDate: "2020-05-30",
+        endDate: "2020-06-23"
       },
       {
-        "id": 5,
-        "name": "Chelsey Dietrich",
-        "username": "Kamren",
-        "email": "Lucio_Hettinger@cybercom.com",
-        "phone": "345-954-1289"
+        id: 5,
+        name: "Chelsey Dietrich",
+        username: "Kamren",
+        email: "Lucio_Hettinger@test.com",
+        role: "Project manager",
+        startDate: "2020-07-01",
+        endDate: "2020-07-30"
       },
       {
-        "id": 6,
-        "name": "Mrs. Dennis Schulist",
-        "username": "Leopoldo_Corkery",
-        "email": "Karley_Dach@cybercom.com",
-        "phone": "935-8478-6430"
+        id: 6,
+        name: "Mrs. Dennis Schulist",
+        username: "Leopoldo_Corkery",
+        email: "Karley_Dach@test.com",
+        role: "UX designer",
+        startDate: "2020-06-10",
+        endDate: "2020-07-03"
       },
       {
-        "id": 7,
-        "name": "Kurtis Weissnat",
-        "username": "Elwyn.Skiles",
-        "email": "Telly.Hoeger@cybercom.com",
-        "phone": "210.067.6132"
+        id: 7,
+        name: "Kurtis Weissnat",
+        username: "Elwyn.Skiles",
+        email: "Telly.Hoeger@test.com",
+        role: "Frontend developer",
+        startDate: "2020-06-03",
+        endDate: "2020-06-22"
       },
       {
-        "id": 8,
-        "name": "Nicholas Runolfsdottir V",
-        "username": "Maxime_Nienow",
-        "email": "Sherwood@cybercom.com",
-        "phone": "586-493-69140"
+        id: 8,
+        name: "Nicholas Runolfsdottir V",
+        username: "Maxime_Nienow",
+        email: "Sherwood@test.com",
+        role: "Backend developer",
+        startDate: "2020-08-02",
+        endDate: "2020-08-28"
       },
       {
-        "id": 9,
-        "name": "Glenna Reichert",
-        "username": "Delphine",
-        "email": "Chaim_McDermott@cybercom.com",
-        "phone": "976-6794-41206"
+        id: 9,
+        name: "Glenna Reichert",
+        username: "Delphine",
+        email: "Chaim_McDermott@test.com",
+        role: "UX designer",
+        startDate: "2020-06-20",
+        endDate: "2020-07-15"
       },
       {
-        "id": 10,
-        "name": "Clementina DuBuque",
-        "username": "Moriah.Stanton",
-        "email": "Rey.Padberg@cybercom.com",
-        "phone": "024-648-3804"
+        id: 10,
+        name: "Clementina DuBuque",
+        username: "Moriah.Stanton",
+        email: "Rey.Padberg@test.com",
+        role: "Frontend developer",
+        startDate: "2020-07-11",
+        endDate: "2020-07-30"
       }
     ]
   });
