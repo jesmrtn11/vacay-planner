@@ -1,20 +1,10 @@
 import React from 'react';
-
+import Day from '../Day/Day';
 import "./Calendar.scss";
 
 const Calendar = ({ users }) => {
 
   const json = JSON.stringify(users, null, 2);
-
-  const headers = ["name", "role", "startDate", "endDate"];
-
-  let employees = [];
-
-  // for (let user of users) {
-  // employees.push({
-  // ...user
-  // });
-  // }
 
   return (
 
@@ -24,30 +14,39 @@ const Calendar = ({ users }) => {
 
   {/* <pre>{json}</pre> */}
 
-  <form>
+  <form className="calendar-table wrapper">
     <table className="calendar-table">
 
       <thead className="calendar-table__thead">
         <tr>
-          {headers.map((header,index)=>(
-            <th key={index}>{header.toUpperCase()}</th>
-          ))}
+          <th></th>
+          <th className="month" colSpan="30">OCTOBER</th>
+        </tr>
+        <tr>
+          <th>NAME</th>
+          {Array(30).fill().map((a, i) => {
+              return (
+                <th key={`number:${i}`}>{i + 1}</th>
+              )
+            })}
         </tr>
       </thead>
 
       <tbody className="calendar-table__tbody">
         {users.map((user, index)=>(
-          <tr key={index}>
-          {headers.map((header,index) => (
-            <td key={index}>
-              {user[header]}
-            </td>
-          ))}
-          </tr> 
+          <tr key={`user:${index}`}>
+            <td className="calendar-table__name">{user.name}</td>
+            {Array(30).fill().map((a, i) => {
+              return (
+                <Day key={`day:${i}`} date={i + 1} />
+              )
+            })}
+          </tr>
         ))}
       </tbody>
-      
+
     </table>
+
   </form>
   </div>
   );

@@ -8,6 +8,10 @@
   border-collapse: collapse;
   border: 1px solid #e9ecef;
 
+  &.wrapper {
+    overflow: auto;
+  }
+
   &__thead {
     text-align: left;
 
@@ -16,10 +20,16 @@
       background-color: #1d96b2;
       border-right: 1px solid #e9ecef;
       padding: 10px;
+      text-align: center;
 
       &:last-child {
         border: none;
       }
+    }
+
+    & .month {
+      text-align: center;
+      border-bottom: 1px solid #fff!important;
     }
   }
 
@@ -32,6 +42,17 @@
     tr:nth-of-type(odd) {
       background-color: #f2f2f2;
     }
+  }
+
+  &__name {
+    min-width: 190px;
+  }
+
+  &__day {
+    // color: transparent;
+    min-width: 45px;
+    text-align: center;
+    cursor: pointer;
   }
 
   tr {

@@ -1,8 +1,8 @@
 import Calendar from './Calendar';
 import { connect } from "react-redux";
 
-const mapStateToProps = (state) => ({
-  users: state.users.users
+const mapState = (state) => ({
+  users: state.users
 });
 
-export default connect(mapStateToProps)(Calendar);
+export default connect(mapState)(Calendar);
