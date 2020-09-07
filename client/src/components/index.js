@@ -1,2 +1,2 @@
 export { default as Calendar } from "./Calendar";
-export { default as Day } from "./Day";
+export { default as Date } from "./Date";

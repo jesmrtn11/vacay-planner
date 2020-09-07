@@ -1,4 +1,5 @@
-import Date from './Date';
+import Date from "./Date";
+import "./Date.scss";
 import { connect } from "react-redux";
 
 const mapState = (state) => ({
