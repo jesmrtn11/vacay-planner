@@ -1,8 +1,14 @@
 import React from "react";
+import { setModal } from "../../actions";
 
 export default ({ date, user, activity }) => {
   const onClick = () => {
-    console.log("click", date);
+    if (activity) {
+      setModal({
+        show: true,
+        userId: user.id
+      });
+    }
   }
   return (
     <div className="activity" onClick={onClick}>

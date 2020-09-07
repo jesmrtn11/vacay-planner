@@ -1,5 +1,6 @@
-export * from "./users";
 export * from "./activities";
+export * from "./modal";
+export * from "./users";
 
 import { fetchUsers } from "./users";
 import { fetchActivities } from "./activities";
