@@ -1,11 +1,11 @@
-import { SET_DATES } from "../types";
+import { SET_ACTIVITIES } from "../types";
 
 const initialState = [];
 
 export default (state = initialState, action)  => {
   switch (action.type) {
-    case SET_DATES:
-      return action.dates;
+    case SET_ACTIVITIES:
+      return action.activities;
     default: 
       return state
   }

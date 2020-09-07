@@ -1,2 +1,2 @@
 export { default as users } from "./users";
-export { default as dates } from "./dates";
+export { default as activities } from "./activities";

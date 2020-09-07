@@ -1,11 +1,11 @@
 import React from "react";
 import { format, eachDayOfInterval } from "date-fns";
-import { default as DateComponent } from "../Date";
+import Activity from "../Activity";
 
 const Calendar = ({ users }) => {
   let dates = eachDayOfInterval({
     start: new Date(2020, 8, 1),
-    end:   new Date(2020, 8, 2)
+    end:   new Date(2020, 8, 30)
   }).map(date => {
     return format(date, "yyyy-MM-dd");
   });
@@ -16,10 +16,10 @@ const Calendar = ({ users }) => {
         <tbody>
           {users.map(user => (
             <tr key={`user:${user.id}`}>
-              <td>{user.name}</td>
+              <td width="120">{user.name}</td>
               {dates.map(date => (
                 <td key={`date:${user.id}:${date}`}>
-                  <DateComponent date={date} user={user}/>
+                  <Activity date={date} user={user}/>
                 </td>
               ))}
             </tr>

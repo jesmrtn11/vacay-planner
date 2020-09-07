@@ -1,12 +1,12 @@
 export * from "./users";
-export * from "./dates";
+export * from "./activities";
 
 import { fetchUsers } from "./users";
-import { fetchDates } from "./dates";
+import { fetchActivities } from "./activities";
 
 export const init = () => {
   fetchUsers();
-  fetchDates();
+  fetchActivities();
 }
 
 

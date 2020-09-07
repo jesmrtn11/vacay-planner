@@ -6,7 +6,10 @@ router.use("/users", (req, res, next) => {
   res.json({
     users: [{
       id: 1,
-      name: "Jesica Martin"
+      name: "Jesica"
+    }, {
+      id: 2,
+      name: "Alma"
     }]
   });
 });
