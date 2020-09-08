@@ -6,7 +6,13 @@ export default ({ date, user, activity }) => {
     if (activity) {
       setModal({
         show: true,
-        userId: user.id
+        user: user.name,
+        userId: user.id,
+        role: user.role,
+        project: user.project,
+        startDate: activity.startDate,
+        endDate: activity.endDate,
+        type: activity.type
       });
     }
   }

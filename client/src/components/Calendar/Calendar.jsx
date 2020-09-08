@@ -13,12 +13,26 @@ const Calendar = ({ users }) => {
   return (
     <div className="calendar">
       <table>
+        <thead className="calendar-table__thead">
+          <tr>
+            <th></th>
+            <th className="month" colSpan="30">SEPTIEMBRE</th>
+          </tr>
+          <tr>
+            <th className="title-name" style={{minWidth: "170px"}}>NAME</th>
+            {Array(30).fill().map((a, i) => {
+                return (
+                  <th key={`number:${i}`}>{i + 1}</th>
+                )
+              })}
+          </tr>
+        </thead>
         <tbody>
           {users.map(user => (
             <tr key={`user:${user.id}`}>
-              <td width="120">{user.name}</td>
+              <td className="name" width="150">{user.name}<br /><small>{user.role} / {user.project}</small></td>
               {dates.map(date => (
-                <td key={`date:${user.id}:${date}`}>
+                <td className="activity-wrapper" key={`date:${user.id}:${date}`}>
                   <Activity date={date} user={user}/>
                 </td>
               ))}

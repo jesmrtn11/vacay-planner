@@ -4,6 +4,10 @@
   }
   td {
     border: 1px solid #ddd;
+    height: 60px;
+    &.name {
+      padding-left: 10px;
+    }
   }
 }
 
@@ -43,7 +47,7 @@
   }
 
   &__tbody {
-    td{
+    td {
       border: 1px solid #e9ecef;
       padding: 10px;
     }
@@ -51,10 +55,6 @@
     tr:nth-of-type(odd) {
       background-color: #f2f2f2;
     }
-  }
-
-  &__name {
-    min-width: 190px;
   }
 
   &__day {

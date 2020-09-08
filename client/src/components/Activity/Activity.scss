@@ -1,10 +1,19 @@
+td.activity-wrapper {
+  min-width: 60px;
+  //display: flex;
+  // text-align: center;
+  // justify-content: center;
+  // align-items: center;
+}
 .activity {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 16px;
   height: 16px;
+  margin: 0 auto;
 }
+
 .temp {
   background: #ccc;
   border-radius: 99px;
@@ -16,4 +25,10 @@
 }
 .temp.SICK_DAY {
   background: #dc3545;
+}
+.temp.PARENTAL_LEAVE {
+  background: #007bff;
+}
+.temp.SERVICE_DAY {
+  background: #6c757d;
 }
