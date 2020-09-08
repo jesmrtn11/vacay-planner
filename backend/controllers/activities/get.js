@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 module.exports = router;
 
-router.use("/activities", (req, res, next) => {
+router.get("/activities", (req, res) => {
   res.json({
     activities: [{
       userId: 1,

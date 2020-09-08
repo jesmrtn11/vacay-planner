@@ -8,8 +8,3 @@ const mapState = (state) => ({
 });
 
 export default connect(mapState)(Modal);
-
-
-// const mapState = (state, { user, date }) => ({
-//   activity: state.activities.find(activity => activity.userId == user.id && isDateBetween(date, activity.startDate, activity.endDate))
-// });

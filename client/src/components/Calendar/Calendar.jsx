@@ -1,6 +1,7 @@
 import React from "react";
 import { format, eachDayOfInterval } from "date-fns";
 import Activity from "../Activity";
+import Logo from "../Logo";
 
 const Calendar = ({ users }) => {
   let dates = eachDayOfInterval({
@@ -12,11 +13,12 @@ const Calendar = ({ users }) => {
 
   return (
     <div className="calendar">
+      <Logo />
       <table>
         <thead className="calendar-table__thead">
           <tr>
             <th></th>
-            <th className="month" colSpan="30">SEPTIEMBRE</th>
+            <th className="month" colSpan="30"> SEPTEMBER </th>
           </tr>
           <tr>
             <th className="title-name" style={{minWidth: "170px"}}>NAME</th>

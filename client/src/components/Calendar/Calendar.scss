@@ -1,4 +1,6 @@
 .calendar {
+  overflow: auto; 
+
   table {
     border-collapse: collapse;
   }
@@ -30,7 +32,7 @@
 
     th {
       color: #fff;
-      background-color: #1d96b2;
+      background-color: #005699;
       border-right: 1px solid #e9ecef;
       padding: 10px;
       text-align: center;
@@ -41,7 +43,7 @@
     }
 
     & .month {
-      text-align: center;
+      text-align: left;
       border-bottom: 1px solid #fff!important;
     }
   }
@@ -58,7 +60,6 @@
   }
 
   &__day {
-    // color: transparent;
     min-width: 45px;
     text-align: center;
     cursor: pointer;

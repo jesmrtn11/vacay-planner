@@ -2,11 +2,8 @@ import React from "react";
 import { closeModal } from "../../actions";
 import Button from "../Button";
 
-export default ({ modal, activity, user }) => {
+export default ({ modal }) => {
   const json = JSON.stringify(modal, null, 2);
-  const jsonActivity = JSON.stringify(activity, null, 2);
-  const jsonUser = JSON.stringify(user, null, 2);
-
 
   return modal.show && (
     <div className="modal-overlay">
