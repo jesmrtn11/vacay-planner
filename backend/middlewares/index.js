@@ -1,5 +1,7 @@
-const auth = require("./auth");
+const body = require("./body");
+const json = require("./json");
 
-module.exports = () => [
-  auth()
-];
+module.exports = {
+  body,
+  json
+};

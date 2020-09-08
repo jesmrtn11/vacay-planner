@@ -21,7 +21,7 @@ router.use("/users", (req, res, next) => {
       role: "Fullstack"
     },{
       id: 4,
-      name: "Daniel Ekberg",
+      name: "Maurits Johansson",
       project: "VR-Timber",
       role: "Frontend"
     },{
