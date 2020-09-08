@@ -24,8 +24,12 @@
     text-align: center;
   }
 
-  .modal-content,
+  .modal-content{
+    padding: 20px;
+  }
+
   .modal-footer {
     padding: 20px;
+    display: flex;
   }
 }

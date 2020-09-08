@@ -18,7 +18,7 @@ export default ({ date, user, activity }) => {
   }
   return (
     <div className="activity" onClick={onClick}>
-      <div className={"temp" + (activity ? " " + activity.type : "")}/>
+      <div className={"dot" + (activity ? " " + activity.type : "")}/>
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.button {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #28a745;
+  border: 0px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  height: 54px;
+  height: 42px;
+  line-height: 1;
+  margin: 0;
+  padding: 0 20px;
+  padding: 0 16px;
+  outline: none;
+  user-select: none;
+
+  &.success {
+    background: #28a745;
+    justify-content: flex-end;
+  }
+  &.secondary {
+    background: #6c757d;
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { closeModal } from "../../actions";
+import Button from "../Button";
 
 export default ({ modal, activity, user }) => {
   const json = JSON.stringify(modal, null, 2);
@@ -20,7 +21,7 @@ export default ({ modal, activity, user }) => {
           <p>End date: {modal.endDate}</p>
         </div>
         <div className="modal-footer">
-          <button className="toggle-button"onClick={closeModal}>Close</button>
+          <Button type="success" onClick={closeModal}>Close</Button>
         </div>
       </div>
     </div>

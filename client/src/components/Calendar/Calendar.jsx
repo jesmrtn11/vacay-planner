@@ -40,6 +40,9 @@ const Calendar = ({ users }) => {
           ))}
         </tbody>
       </table>
+      <small>
+        <p>Note* Green = Vacation, Red = Sick, Blue = Parental leave, Dark grey = Non-compensated absence (tjänstledig)</p>
+      </small>
     </div>
   );
 

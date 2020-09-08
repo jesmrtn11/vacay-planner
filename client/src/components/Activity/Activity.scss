@@ -14,21 +14,21 @@ td.activity-wrapper {
   margin: 0 auto;
 }
 
-.temp {
+.dot {
   background: #ccc;
   border-radius: 99px;
   width: 12px;
   height: 12px;
 }
-.temp.VACATION {
+.dot.VACATION {
   background: #28a745;
 }
-.temp.SICK_DAY {
+.dot.SICK_DAY {
   background: #dc3545;
 }
-.temp.PARENTAL_LEAVE {
+.dot.PARENTAL_LEAVE {
   background: #007bff;
 }
-.temp.SERVICE_DAY {
+.dot.SERVICE_DAY {
   background: #6c757d;
 }
