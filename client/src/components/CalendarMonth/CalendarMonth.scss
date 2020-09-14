@@ -1,0 +1,115 @@
+.icon {
+  font-family: 'Material Icons', serif;
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+.date-picker {
+  display: block;
+  position: relative;
+  width: 90%;
+  min-width: 300px;
+  max-width: 360px;
+  background: white;
+  border: 1px solid lightgray;
+  height: auto;
+  .header {
+    font-size: 18px;
+    padding: .5em 0;
+    border-bottom: 1px solid lightgray;
+    margin: 0;
+    .col-start, .col-end {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+    }
+    .col-center {
+      min-width: 200px;
+      text-align: center;
+    }
+    .icon {
+      cursor: pointer;
+      transition: .15s ease-out;
+      &:first-of-type {
+        margin-left: 1em;
+      }
+      &:last-of-type {
+        margin-right: 1em;
+      }
+    }
+  }
+  .column {
+    flex-grow: 0;
+    flex-basis: calc(100%/7);
+    width: calc(100%/7);
+  }
+  .row {
+    max-width: 100%;
+    margin: 0;
+  }
+  .days {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: gray;
+    font-size: 70%;
+    padding: .75em 0;
+    border-bottom: 1px solid lightgray;
+    margin: 0;
+    .column {
+      text-align: center;
+    }
+  }
+  .body {
+    .cell {
+      position: relative;
+      height: 3em;
+      border-right: 1px solid lightgray;
+      overflow: hidden;
+      cursor: pointer;
+      background: white;
+      transition: 0.25s ease-out;
+      &:hover {
+        background: rgba(113, 50, 135, 0.1);
+        transition: 0.5s ease-out;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      & .number {
+        position: absolute;
+        font-size: 82.5%;
+        line-height: 1;
+        top: .75em;
+        right: .75em;
+      }
+    }
+    .row {
+      border-bottom: 1px solid lightgray;
+      justify-content: space-between;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    .selected {
+      border: 1px solid #713287;
+      color: #713287;
+    }
+    .disabled {
+      color: lightgray;
+      pointer-events: none;
+    }
+  }
+}
+.date-picker .body .cell:hover .bg, 
+.date-picker .body .selected .bg  {
+  opacity: 0.2;
+  transition: .5s ease-in;
+}

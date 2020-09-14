@@ -4,7 +4,7 @@
   align-items: center;
   background: #28a745;
   border: 0px;
-  border-radius: 3px;
+  border-radius: 1px;
   cursor: pointer;
   color: #fff;
   font: inherit;
@@ -21,10 +21,13 @@
   user-select: none;
 
   &.success {
-    background: #28a745;
+    background: #ed7b02;
+    border: 1px solid #ed7b02;
     justify-content: flex-end;
   }
   &.secondary {
-    background: #6c757d;
+    background: transparent;
+    border: 1px solid #6c757d;
+    color: #6c757d;
   }
 }

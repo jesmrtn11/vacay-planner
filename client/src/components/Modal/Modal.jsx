@@ -1,5 +1,6 @@
 import React from "react";
 import { closeModal } from "../../actions";
+import { XCircleFillIcon } from "@primer/octicons-react";
 import Button from "../Button";
 
 export default ({ modal }) => {
@@ -9,16 +10,16 @@ export default ({ modal }) => {
     <div className="modal-overlay">
       <div className="modal">
         <div className="modal-content">
-          <h2>Employee</h2>
+          <div className="icon right" onClick={closeModal}>
+            <XCircleFillIcon size={24}/>
+          </div>
+          <h2>Employee info</h2>
           <p>Name: {modal.user}</p>
           <p>Role: {modal.role}</p>
           <p>Current project: {modal.project}</p>
           <p>Type: {modal.type}</p>
           <p>Start date: {modal.startDate}</p>
           <p>End date: {modal.endDate}</p>
-        </div>
-        <div className="modal-footer">
-          <Button type="success" onClick={closeModal}>Close</Button>
         </div>
       </div>
     </div>

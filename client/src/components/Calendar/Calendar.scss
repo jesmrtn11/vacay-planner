@@ -1,9 +1,5 @@
 .calendar {
   overflow: auto; 
-
-  table {
-    border-collapse: collapse;
-  }
   td {
     border: 1px solid #ddd;
     height: 60px;
@@ -12,7 +8,6 @@
     }
   }
 }
-
 .calendar-table {
   $root: &;
 
@@ -22,14 +17,11 @@
   background-color: transparent;
   border-collapse: collapse;
   border: 1px solid #e9ecef;
-
   &.wrapper {
     overflow: auto;
   }
-
   &__thead {
     text-align: left;
-
     th {
       color: #fff;
       background-color: #005699;
@@ -41,30 +33,25 @@
         border: none;
       }
     }
-
     & .month {
       text-align: left;
       border-bottom: 1px solid #fff!important;
     }
   }
-
   &__tbody {
     td {
       border: 1px solid #e9ecef;
       padding: 10px;
     }
-
     tr:nth-of-type(odd) {
       background-color: #f2f2f2;
     }
   }
-
   &__day {
     min-width: 45px;
     text-align: center;
     cursor: pointer;
   }
-
   tr {
     display: table-row;
     vertical-align: inherit;

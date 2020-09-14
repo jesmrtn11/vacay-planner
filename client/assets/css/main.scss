@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+html,
+body {
+  min-height: 100vh;
+}
+body {
+  font: 15px/1.4 "Roboto", sans-serif;
+  color: #242424;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+small {
+  font-size: 12px;
+  color: #6c757d;
+}
+table {
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid #e9ecef;
+    padding: 10px;
+  }
+}
+h1, h2, h3, h4 {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+}
+h1 svg,
+h2 svg,
+h3 svg,
+h4 svg {
+  margin-right: 8px;
+}
+h1 { font-size: 32px; font-weight: 400; }
+h2 { font-size: 26px; font-weight: 400; }
+h3 { font-size: 20px; font-weight: 400; } 
+h4 { font-size: 18px; font-weight: 400; }
+b {
+  font-weight: 600;
+}
+input, 
+textarea {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+select  {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+table {
+  border-collapse: collapse;
+}
+
+.align-right {
+  text-align: right !important;
+}

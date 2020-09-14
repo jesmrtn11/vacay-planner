@@ -8,6 +8,6 @@ router.post("/activities", json(), (req, res) => {
     return res.sendStatus(500);
   }
   res.json({
-    example: req.json
+    activities: req.json
   });
 });

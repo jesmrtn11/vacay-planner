@@ -1,7 +1,7 @@
 import React from "react";
 import { setModal } from "../../actions";
 
-export default ({ date, user, activity }) => {
+export default ({ weekend, date, user, activity }) => {
   const onClick = () => {
     if (activity) {
       setModal({
@@ -17,7 +17,7 @@ export default ({ date, user, activity }) => {
     }
   }
   return (
-    <div className="activity" onClick={onClick}>
+    <div className={`activity ${weekend ? "weekend" : ""}`} onClick={onClick}>
       <div className={"dot" + (activity ? " " + activity.type : "")}/>
     </div>
   );

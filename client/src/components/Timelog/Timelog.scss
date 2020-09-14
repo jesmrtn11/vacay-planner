@@ -2,10 +2,40 @@
   .field {
     margin-bottom: 20px;
 
-    input {
-      border: 1px solid #ccc;
-      border-radius: 3px;
+    label {
+      color: #6c757d;
+    }
+
+    .input {
+      border: none;
+      border-bottom: 1px solid #ccc;
       height: 25px;
+    }
+    .textarea {
+      float: left;
+      width: 100%;
+      outline: none;
+      resize: none;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    .button:last-child {
+      margin-left: 20px;
+    }
+  }
+  .table-employee {
+    thead tr {
+      background-color: #713287;
+      color: #fff;
+    }
+    th {
+      font-weight: 400;
     }
   }
 }

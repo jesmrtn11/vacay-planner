@@ -5,6 +5,7 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0,0,0,.4);
+  z-index: 9;
 }
 .modal {
   position: fixed;
@@ -31,5 +32,13 @@
   .modal-footer {
     padding: 20px;
     display: flex;
+  }
+}
+.icon {
+  display: flex;
+  align-items: flex-end;
+  
+  &.right {
+    justify-content: flex-end;
   }
 }

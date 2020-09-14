@@ -1,8 +1,7 @@
 import React,  { useState } from "react";
-import { format, startOfWeek, addDays, startOfMonth, endOfMonth, endOfWeek, isSameMonth, isSameDay, parse, subMonths, addMonths, eachDayOfInterval } from "date-fns";
+import { format, startOfWeek, addDays, startOfMonth, endOfMonth, endOfWeek, isSameMonth, isSameDay, parse, subMonths, addMonths } from "date-fns";
 import { ChevronLeftIcon, ChevronRightIcon } from "@primer/octicons-react";
 import Activity from "../Activity";
-import CalendarMonth from "../CalendarMonth";
 import Logo from "../Logo";
 
 const Calendar = ({ users }) => {
@@ -16,7 +15,6 @@ const Calendar = ({ users }) => {
       setCurrentDate(subMonths(currentDate, 1));
   };
 
-  
   const header = () => {
     const dateFormat = "MMMM yyyy";
     return (
@@ -37,24 +35,22 @@ const Calendar = ({ users }) => {
       </div>
     );
   };
-  
+
   const daysOfWeek = () => {
-    const dateFormat = "iii";
-    const dateFormatDay = "d";
+    const dateFormat = "ddd";
     const days = [];
     let startDate = startOfWeek(currentDate);
-    
-    for (let i = 0; i < 30; i++) {
+
+    for (let i = 0; i < 7; i++) {
       days.push(
         <th>
           {format(addDays(startDate, i), dateFormat)}
-          <span style={{display: "block"}}>{format(addDays(startDate, i), dateFormatDay)}</span>
         </th>
       );
     }
     return days;
   };
-  
+
   const cells = () => {
     const monthStart = startOfMonth(currentDate);
     const monthEnd = endOfMonth(monthStart);
@@ -68,33 +64,30 @@ const Calendar = ({ users }) => {
 
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
-        formattedDate = format(day, dateFormat);
-        const cloneDay = day;
-        days.push(
-            <div className="column cell"> 
-              <span className="number">{formattedDate}</span>
-            </div>
-          );
-        day = addDays(day, 1);
-        }
+      formattedDate = format(day, dateFormat);
+      const cloneDay = day;
+      days.push(
+        <div className="cell"> 
+          <span className="number">{formattedDate}</span>
+        </div>
+        );
+      day = addDays(day, 1);
+      }
       rows.push(
-            <span> {days} </span>
-          );
+        <div className="row" key={day}> {days} </div>
+      );
       days = [];
     }
-    return <p className="body">{rows}</p>;
+
+    return days;
   }
-    
-    // let dates = eachDayOfInterval({
-      //   start: new Date(2020, 8, 1),
-      //   end:   new Date(2020, 8, 30)
-      // }).map(date => {
-        //   return format(date, "yyyy-MM-dd");
-        // });
-        
-  let datesNew = eachDayOfInterval({ start: startOfWeek(new Date()), end: endOfWeek(new Date())}).map(date => {
-    return format(date, "yyyy-MM-dd");
-  });
+
+  // let dates = eachDayOfInterval({
+  //   start: new Date(2020, 8, 1),
+  //   end:   new Date(2020, 8, 30)
+  // }).map(date => {
+  //   return format(date, "yyyy-MM-dd");
+  // });
 
   return (
     <div className="calendar">
@@ -116,10 +109,9 @@ const Calendar = ({ users }) => {
           {users.map(user => (
             <tr key={`user:${user.id}`}>
               <td className="name" width="150">{user.name}<br /><small>{user.role} / {user.project}</small></td>
-              {datesNew.map(date => {
+              {dates.map(date => {
                 return (
                   <td className="activity-wrapper" key={`date:${user.id}:${date}`}>
-                    {/* {cells()} */}
                     <Activity date={date} user={user}/>
                   </td>
                 )
@@ -132,13 +124,6 @@ const Calendar = ({ users }) => {
         <p>Note* Green = Vacation, Red = Sick, Blue = Parental leave, Dark grey = Non-compensated absence (tjänstledig)</p>
       </small>
 
-      {/* {datesNew.map(date => {
-        console.log("test week day", date);
-      })
-      } */}
-
-       <br/>
-      {/* <CalendarMonth /> */}
     </div>
   );
 };
