@@ -1,16 +1,9 @@
 import Activity from "./Activity";
 import "./Activity.scss";
-import { parseISO, isWithinInterval } from "date-fns";
 import { connect } from "react-redux";
 
 const isDateBetween = (date, start, end) => {
-  date  = parseISO(date);
-  start = parseISO(start);
-  end   = parseISO(end);
-  return isWithinInterval(date, {
-    start,
-    end
-  });
+  return date >= start && date <= end;
 }
 
 const mapState = (state, { user, date }) => ({

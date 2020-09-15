@@ -1,60 +1,37 @@
 .calendar {
-  overflow: auto; 
-  td {
+  overflow: auto;
+  table {
+    table-layout: fixed;
+  }
+  td,
+  th {
     border: 1px solid #ddd;
-    height: 60px;
-    &.name {
-      padding-left: 10px;
-    }
+    line-height: 1;
+    vertical-align: initial;
   }
-}
-.calendar-table {
-  $root: &;
-
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 1rem;
-  background-color: transparent;
-  border-collapse: collapse;
-  border: 1px solid #e9ecef;
-  &.wrapper {
-    overflow: auto;
+  .red-day {
+    background: #f5a5a5;
   }
-  &__thead {
-    text-align: left;
-    th {
-      color: #fff;
-      background-color: #005699;
-      border-right: 1px solid #e9ecef;
-      padding: 10px;
-      text-align: center;
-
-      &:last-child {
-        border: none;
-      }
-    }
-    & .month {
-      text-align: left;
-      border-bottom: 1px solid #fff!important;
-    }
+  .weekend {
+    background: #fff9e5;
   }
-  &__tbody {
-    td {
-      border: 1px solid #e9ecef;
-      padding: 10px;
-    }
-    tr:nth-of-type(odd) {
-      background-color: #f2f2f2;
-    }
+  .month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
   }
-  &__day {
-    min-width: 45px;
-    text-align: center;
-    cursor: pointer;
+  .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
   }
-  tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
+  .name {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    padding: 0 10px;
   }
 }

@@ -11,9 +11,7 @@ body {
 body {
   font: 15px/1.4 "Roboto", sans-serif;
   color: #242424;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 40px;
 }
 small {
   font-size: 12px;
@@ -21,11 +19,10 @@ small {
 }
 table {
   border-collapse: collapse;
-
-  th, td {
-    border: 1px solid #e9ecef;
-    padding: 10px;
-  }
+}
+td,
+th {
+  padding: 0;
 }
 h1, h2, h3, h4 {
   display: flex;
@@ -55,10 +52,6 @@ select  {
   -webkit-appearance: none;
   appearance: none;
 }
-table {
-  border-collapse: collapse;
-}
-
 .align-right {
   text-align: right !important;
 }
