@@ -2,10 +2,55 @@ import React,  { useState } from "react";
 import { format, startOfWeek, addDays, startOfMonth, endOfMonth, endOfWeek, isSameMonth, isSameDay, parse, subMonths, addMonths, eachDayOfInterval } from "date-fns";
 import { ChevronLeftIcon, ChevronRightIcon } from "@primer/octicons-react";
 import Activity from "../Activity";
-import CalendarMonth from "../CalendarMonth";
 import Logo from "../Logo";
 
 const Calendar = ({ users }) => {
+  const [now, setNow] = useState(Date.now());
+
+  console.log("RENDER HAPENED");
+
+  let start = startOfMonth(now);
+  let end = endOfMonth(now);
+  let interval = eachDayOfInterval({
+    start: start,
+    end: end
+  }).map(date => {
+    return format(date, "yyyy-MM-dd")
+  });
+
+  const onPrevMonth = () => setNow(addMonths(now, -1));
+  const onNextMonth = () => setNow(addMonths(now,  1));
+
+  return (
+    <div className="cal">
+      <button onClick={onPrevMonth}>Prev</button>
+      <button onClick={onNextMonth}>Next</button>
+      <table>
+        <thead>
+          <tr>
+            <th>{format(now, "MMMM yyyy")}</th>
+            {interval.map(date => (
+              <th>{date.slice(-2)}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(user => (
+          <tr>
+            <td>{user.name}</td>
+            {interval.map(date => (
+              <td>
+                <Activity date={date} user={user}/>
+              </td>
+            ))}
+          </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+
+
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -55,46 +100,51 @@ const Calendar = ({ users }) => {
     return days;
   };
   
-  const cells = () => {
+  const dayCells = () => {
     const monthStart = startOfMonth(currentDate);
     const monthEnd = endOfMonth(monthStart);
     const startDate = startOfWeek(monthStart);
     const endDate = endOfWeek(monthEnd);
     const dateFormat = "d";
-    const rows = [];
+    let rows = [];
     let days = [];
     let day = startDate;
     let formattedDate = "";
 
     while (day <= endDate) {
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 30; i++) {
         formattedDate = format(day, dateFormat);
-        const cloneDay = day;
         days.push(
-            <div className="column cell"> 
-              <span className="number">{formattedDate}</span>
+            <div className="cell"> 
+              <span>{formattedDate}</span>
             </div>
           );
         day = addDays(day, 1);
         }
       rows.push(
-            <span> {days} </span>
-          );
+        <span> {days} </span>
+      );
       days = [];
     }
-    return <p className="body">{rows}</p>;
+    return <p>{rows}</p>;
   }
     
-    // let dates = eachDayOfInterval({
-      //   start: new Date(2020, 8, 1),
-      //   end:   new Date(2020, 8, 30)
-      // }).map(date => {
-        //   return format(date, "yyyy-MM-dd");
-        // });
+  // let dates = eachDayOfInterval({
+  //   start: new Date(2020, 8, 1),
+  //   end:   new Date(2020, 8, 30)
+  // }).map(date => {
+  //   return format(date, "yyyy-MM-dd");
+  // });
         
-  let datesNew = eachDayOfInterval({ start: startOfWeek(new Date()), end: endOfWeek(new Date())}).map(date => {
+  let datesNew = eachDayOfInterval({ 
+    start: startOfMonth(new Date()), 
+    end: endOfMonth(new Date())
+  }).map(date => {
     return format(date, "yyyy-MM-dd");
   });
+
+    console.log("start", startOfMonth(new Date()));
+    console.log("end", endOfMonth(new Date()));
 
   return (
     <div className="calendar">
@@ -119,7 +169,6 @@ const Calendar = ({ users }) => {
               {datesNew.map(date => {
                 return (
                   <td className="activity-wrapper" key={`date:${user.id}:${date}`}>
-                    {/* {cells()} */}
                     <Activity date={date} user={user}/>
                   </td>
                 )
@@ -136,9 +185,6 @@ const Calendar = ({ users }) => {
         console.log("test week day", date);
       })
       } */}
-
-       <br/>
-      {/* <CalendarMonth /> */}
     </div>
   );
 };

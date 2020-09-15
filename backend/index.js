@@ -1,6 +1,7 @@
 const express = require("express");
 const middlewares = require("./middlewares");
 const controllers = require("./controllers");
+const db = require("./db");
 const { body } = require("./middlewares");
 
 const app = express();
