@@ -18,7 +18,6 @@ export default ({ weekend, user, activity }) => {
   }
   return (
     <div className={`activity ${weekend ? "weekend" : ""} ${activity ? " activity-" + activity.type : ""}`} onClick={onClick}>
-      <div className={"dot"}/>
     </div>
   );
 }

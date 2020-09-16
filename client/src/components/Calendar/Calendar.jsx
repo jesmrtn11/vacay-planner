@@ -5,18 +5,9 @@ import {
   getDaysInMonth,
   startOfYear,
   endOfYear,
-  addDays,
-  isSunday,
-  startOfMonth,
-  endOfMonth,
-  endOfWeek,
-  isSameMonth,
-  isSameDay,
-  parse,
-  subMonths,
-  addMonths,
   eachDayOfInterval,
-  isWeekend
+  isWeekend,
+  getWeek
 } from "date-fns";
 
 const months = [
@@ -66,52 +57,73 @@ const Calendar = ({ users }) => {
   });
 
   return (
-    <div className="calendar">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            {Array(12).fill().map((_, i) => (
-              <th colSpan={getDaysInMonth(new Date(2020, i, 1))} key={`month:${i}`}>
-                <div className="month">
-                  {months[i]}
-                </div>
-              </th>
-            ))}
-          </tr>
-          <tr>
-            <th>NAME</th>
-            {interval.map(([date, dateString], i) => (
-              <th key={`weekday:${i}`}>
-                <div className="day">
-                  {dateString.slice(-2)}
-                </div>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
+    <div className="calendar-wrapper">
+      <aside>
+        <div className="month">Month</div>
+        <div className="week">Week</div>
+        <div className="day">Day</div>
+        <div className="names">
           {users.map(user => (
-          <tr key={`user:${user.id}`}>
-            <td>
-              <div className="name">
-                {user.name}
-              </div>
-            </td>
-            {interval.map(([date, dateString]) => (
-              <td 
-                key={`date:${user.id}:${date}`} 
-                className={`${(mark.find(x => x === dateString)) ? "red-day" : ""} ${(isWeekend(date)) ? " weekend" : ""}`}>
-                <Activity date={dateString} user={user}/>
-              </td>
-            ))}
-          </tr>
+            <div key={`user:${user.id}`} className="name">
+              {user.name}
+            </div>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </aside>
+      <div className="calendar">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              {Array(12).fill().map((_, i) => (
+                <th colSpan={getDaysInMonth(new Date(2020, i, 1))} key={`month:${i}`}>
+                  <div className="month">
+                    {months[i]}
+                  </div>
+                </th>
+              ))}
+            </tr>
+            <tr>
+              <th>NAME</th>
+              <th>
+                {interval.map(([date,dateString], i) => (
+                  <p key={i}>{getWeek(date)}</p>
+                ))}
+              </th>
+              {interval.map(([date, dateString], i) => (
+                <th key={`weekday:${i}`}>
+                  <div className="day">
+                    {dateString.slice(-2)}
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {users.map(user => (
+            <tr key={`user:${user.id}`}>
+              <td>
+                <div className="name">
+                  {user.name}
+                </div>
+              </td>
+              {interval.map(([date, dateString]) => (
+                <td 
+                  key={`date:${user.id}:${date}`} 
+                  className={`${(mark.find(x => x === dateString)) ? "red-day" : ""} ${(isWeekend(date)) ? " weekend" : ""}`}>
+                  <Activity date={dateString} user={user}/>
+                </td>
+              ))}
+            </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
       <small>
         <p>Note* Green = Vacation, Red = Sick, Blue = Parental leave, Dark grey = Non-compensated absence (tjänstledig)</p>
       </small>
+      
     </div>
   );
 };

@@ -1,13 +1,37 @@
+.calendar-wrapper {
+  position: relative;
+  z-index: 0;
+  aside {
+    min-width: 182px;
+    max-width: 182px;
+    box-shadow: 6px 0 5px -2px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 77px;
+    background-color: #fff;
+    z-index: 10;
+    .name { 
+      height: 29px;
+      border-bottom: 1px solid #ddd;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
 .calendar {
   overflow: auto;
+  position: relative;
+  z-index: 1;
   table {
     table-layout: fixed;
+    padding-left: 182px;
   }
   td,
   th {
     border: 1px solid #ddd;
     line-height: 1;
-    vertical-align: initial;
   }
   .red-day {
     background: #f5a5a5;
