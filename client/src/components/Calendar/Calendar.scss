@@ -8,9 +8,23 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 77px;
+    //padding-top: 77px;
     background-color: #fff;
     z-index: 10;
+    .month {
+      height: 47px;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      background-color:#f6f6f6;
+    }
+    .day {
+      height: 30px;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      background-color:#f6f6f6;
+    }
     .name { 
       height: 29px;
       border-bottom: 1px solid #ddd;
@@ -28,6 +42,9 @@
     table-layout: fixed;
     padding-left: 182px;
   }
+  thead {
+    background-color:#f6f6f6;
+  }
   td,
   th {
     border: 1px solid #ddd;
@@ -35,6 +52,9 @@
   }
   .red-day {
     background: #f5a5a5;
+  }
+  .lov {
+    background: #d5eef6;
   }
   .weekend {
     background: #fff9e5;
@@ -57,5 +77,8 @@
     align-items: center;
     width: 180px;
     padding: 0 10px;
+  }
+  .today {
+    border: 2px solid #ff6f6f !important;
   }
 }

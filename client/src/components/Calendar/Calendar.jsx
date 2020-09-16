@@ -7,7 +7,8 @@ import {
   endOfYear,
   eachDayOfInterval,
   isWeekend,
-  getWeek
+  getWeek,
+  isToday
 } from "date-fns";
 
 const months = [
@@ -36,10 +37,25 @@ const mark = [
   "2020-05-31",
   "2020-06-06",
   "2020-06-20",
-  "2020-09-18",
   "2020-10-31",
   "2020-12-25",
   "2020-12-26"
+];
+
+const lov = [
+  "2020-10-26",
+  "2020-10-27",
+  "2020-10-28",
+  "2020-10-29",
+  "2020-10-30",
+  "2020-12-24",
+  "2020-12-26",
+  "2020-12-27",
+  "2020-12-28",
+  "2020-12-29",
+  "2020-12-30",
+  "2020-12-31",
+  "2021-01-02"
 ];
 
 const Calendar = ({ users }) => {
@@ -60,7 +76,7 @@ const Calendar = ({ users }) => {
     <div className="calendar-wrapper">
       <aside>
         <div className="month">Month</div>
-        <div className="week">Week</div>
+        {/* <div className="week">Week</div> */}
         <div className="day">Day</div>
         <div className="names">
           {users.map(user => (
@@ -85,14 +101,14 @@ const Calendar = ({ users }) => {
             </tr>
             <tr>
               <th>NAME</th>
-              <th>
+              {/* <th>
                 {interval.map(([date,dateString], i) => (
                   <p key={i}>{getWeek(date)}</p>
                 ))}
-              </th>
+              </th> */}
               {interval.map(([date, dateString], i) => (
                 <th key={`weekday:${i}`}>
-                  <div className="day">
+                  <div className={`day ${(isToday(date)) ? " today" : ""}`}>
                     {dateString.slice(-2)}
                   </div>
                 </th>
@@ -110,7 +126,10 @@ const Calendar = ({ users }) => {
               {interval.map(([date, dateString]) => (
                 <td 
                   key={`date:${user.id}:${date}`} 
-                  className={`${(mark.find(x => x === dateString)) ? "red-day" : ""} ${(isWeekend(date)) ? " weekend" : ""}`}>
+                  className={`
+                    ${(mark.find(x => x === dateString)) ? "red-day" : ""} 
+                    ${(lov.find(x => x === dateString)) ? "lov" : ""}
+                    ${(isWeekend(date)) ? " weekend" : ""}`}>
                   <Activity date={dateString} user={user}/>
                 </td>
               ))}
